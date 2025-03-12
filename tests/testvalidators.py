@@ -130,6 +130,6 @@ complexxvalidator_test = Tester(
     ]
 )
 
-
-validator_test.run_all_tests()
-complexxvalidator_test.run_all_tests()
+if __name__ == "__main__":
+    validator_test.run_all_tests()
+    complexxvalidator_test.run_all_tests()
