@@ -1,5 +1,4 @@
-from testing.testutils import Test, Tester
-from testing.testfactory import create_tc
+from testing.testutils import Test, Tester, create_tc
 import datetime
 
 
