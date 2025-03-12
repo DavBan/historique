@@ -1,0 +1,8 @@
+[project]
+name = "historique"
+version = "0.0.1_alpha"
+description = "gestionnaire d'historique d'actions annulables"
+
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
