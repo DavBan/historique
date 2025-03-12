@@ -7,10 +7,7 @@ T = TypeVar('T')
 from handler import HandlerBase
 
 
-class Validator(ABC,HandlerBase[T]):
-    def __init__(self, handler:T):
-        super().__init__(handler=handler)
-    
+class Validator(ABC):
     def __call__(self):
         return self.validate()
     
@@ -18,13 +15,15 @@ class Validator(ABC,HandlerBase[T]):
     def validate(self) -> bool:
         pass
 
+class HandledValidator(Validator, HandlerBase[T]):
+    def __init__(self, handler:T):
+        super().__init__(handler=handler)
 
-class ComplexValidator(Validator[None]):
+class ComplexValidator(Validator):
     def __init__(self, ValidatorsList:list[Validator]=[]):
-        super().__init__(None)
+        super().__init__()
         self._valid_list=ValidatorsList
         self._validator=iter(self._valid_list)
-        self._last_failing_validator = None
 
     def addValidator(self, validator: Validator):
         self._valid_list.append(validator)

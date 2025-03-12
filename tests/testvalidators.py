@@ -4,29 +4,13 @@ import datetime
 
 from validation import Validator, ComplexValidator
 
-class HandlerTest():
-    def __init__(self, stub:bool=True):
-        self._stub = stub
-        pass
-    
-    @property
-    def stub(self):
-        return self._stub
-    @stub.setter
-    def stub(self, s: bool):
-        self._stub = s
 
-    def test(self)-> bool:
-        return self.stub
-
-
-
-class ValidateTest(Validator[HandlerTest]):
+class ValidateTest(Validator):
     def __init__(self, validate:bool = True):
-        Validator.__init__(self, HandlerTest(validate))
+        self.valid = validate
 
     def validate(self):
-        return self.get_handler().test()
+        return self.valid
 
 validator_tc =[
     ValidateTest(True),
