@@ -45,14 +45,14 @@ validator_test = Tester(
     [
         create_tc(
             "Validator_validate_True",
-            ValidateTest.validate,
+            None,
             True,
             cls=ValidateTest,
             instance_init_param=[True]
         ),
         create_tc(
             "Validator_validate_False",
-            ValidateTest.validate,
+            None,
             False,
             cls=ValidateTest,
             instance_init_param=[False]
