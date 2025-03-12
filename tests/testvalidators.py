@@ -126,6 +126,19 @@ complexxvalidator_test = Tester(
                     ValidateTest(True)
                 ]
             ]
+        ),
+        create_tc(
+            "ComplexeValidator_validate_two_Validator_false",
+            ComplexValidator.validate,
+            True,
+            [],
+            ComplexValidator,
+            [
+                [
+                    ValidateTest(False),
+                    ValidateTest(False)
+                ]
+            ]
         )
     ]
 )
